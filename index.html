@@ -42,7 +42,7 @@
       background: linear-gradient(rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.95)),
                   radial-gradient(circle at top, #221b08 0%, #080808 70%);
       text-align: center;
-      padding: 70px 20px 60px;
+      padding: 60px 20px;
       border-bottom: 1px solid rgba(212, 175, 55, 0.25);
     }
 
@@ -58,39 +58,96 @@
       border-radius: 2px;
     }
 
+    .logo-container {
+      margin-bottom: 15px;
+    }
+
+    .logo-svg {
+      width: 120px;
+      height: auto;
+      fill: none;
+      stroke: var(--gold-main);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+    }
+
     h1 {
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       background: linear-gradient(135deg, var(--gold-light), var(--gold-main), var(--gold-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .brand-tagline {
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
     }
 
     .subtitle {
       color: var(--text-gray);
-      font-size: 1.05rem;
+      font-size: 1rem;
       max-width: 550px;
       margin: 0 auto 30px;
       font-weight: 300;
     }
 
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
     .btn-gold {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
       color: #080808;
       text-decoration: none;
-      padding: 14px 34px;
+      padding: 14px 30px;
       font-weight: 600;
       font-size: 0.9rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       border-radius: 3px;
       transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-gold:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-main);
+      text-decoration: none;
+      padding: 14px 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(212, 175, 55, 0.08);
+      transform: translateY(-2px);
     }
 
     /* Sections */
@@ -123,14 +180,15 @@
 
     .card {
       background-color: var(--bg-card);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.15);
       padding: 25px;
       border-radius: 6px;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, transform 0.3s;
     }
 
     .card:hover {
       border-color: var(--gold-main);
+      transform: translateY(-2px);
     }
 
     .service-header {
@@ -139,7 +197,7 @@
       align-items: baseline;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
       padding-bottom: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .service-name {
@@ -163,7 +221,7 @@
     /* Infos Pratiques */
     .info-box {
       background-color: var(--bg-card);
-      border: 1px solid rgba(212, 175, 55, 0.25);
+      border: 1px solid rgba(212, 175, 55, 0.2);
       border-radius: 6px;
       padding: 35px 25px;
       display: grid;
@@ -175,12 +233,47 @@
     .info-item h3 {
       color: var(--gold-main);
       font-size: 1.1rem;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     .info-item p {
       color: var(--text-gray);
       font-size: 0.92rem;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--gold-main);
+      padding-bottom: 2px;
+    }
+
+    .map-link:hover {
+      color: var(--gold-main);
+    }
+
+    .schedule-list {
+      list-style: none;
+      padding: 0;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .schedule-list li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 4px 0;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    .schedule-list li.closed {
+      color: #c94a4a;
     }
 
     footer {
@@ -192,7 +285,8 @@
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
+      h1 { font-size: 2.1rem; }
+      .cta-buttons { flex-direction: column; }
     }
   </style>
 </head>
@@ -200,9 +294,35 @@
 
   <header>
     <div class="badge">Salon Homme &amp; Barbier • Vitré</div>
+    
+    <div class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 100 120">
+        <!-- Diamond Shape -->
+        <polygon points="50,10 75,28 85,28 50,5 15,28 25,28" stroke="#d4af37" stroke-width="1.5" />
+        <polygon points="25,28 50,10 75,28 50,45" stroke="#d4af37" stroke-dasharray="1 0" />
+        <line x1="25" y1="28" x2="50" y2="45" stroke="#aa8220" />
+        <line x1="75" y1="28" x2="50" y2="45" stroke="#aa8220" />
+        <line x1="50" y1="10" x2="50" y2="45" stroke="#aa8220" />
+        
+        <!-- Scissors Shape -->
+        <line x1="30" y1="35" x2="50" y2="68" stroke="#d4af37" stroke-width="2" />
+        <line x1="70" y1="35" x2="50" y2="68" stroke="#d4af37" stroke-width="2" />
+        <circle cx="50" cy="68" r="3" fill="#aa8220" stroke="#f3d078" stroke-width="1" />
+        <path d="M50,68 L38,90" stroke="#d4af37" stroke-width="2" />
+        <path d="M50,68 L62,90" stroke="#d4af37" stroke-width="2" />
+        <circle cx="34" cy="98" r="8" stroke="#f3d078" stroke-width="2" />
+        <circle cx="66" cy="98" r="8" stroke="#f3d078" stroke-width="2" />
+      </svg>
+    </div>
+
     <h1>COIFFEUR 35 CARATS</h1>
-    <p class="subtitle">L'excellence de la coiffure masculine et du rituel barbier traditionnel au cœur de Vitré.</p>
-    <a href="#contact" class="btn-gold">Prendre Rendez-vous</a>
+    <div class="brand-tagline">« Votre style, notre précision au quotidien »</div>
+    <p class="subtitle">Découvrez l'art de la coupe masculine et le soin barbier d'exception dans une ambiance chaleureuse à Vitré.</p>
+    
+    <div class="cta-buttons">
+      <a href="tel:+33751043827" class="btn-gold">Appeler : 07 51 04 38 27</a>
+      <a href="https://wa.me/33751043827" target="_blank" class="btn-outline">WhatsApp</a>
+    </div>
   </header>
 
   <section class="container" id="tarifs">
@@ -213,77 +333,88 @@
       <div class="card">
         <div class="service-header">
           <span class="service-name">Coupe Homme</span>
-          <span class="service-price">20 €</span>
+          <span class="service-price">15 €</span>
         </div>
-        <p class="service-desc">Diagnostic personnalisé, shampoing, coupe ciseaux ou tondeuse et coiffage.</p>
+        <p class="service-desc">Shampoing, coupe sur-mesure (ciseaux ou tondeuse) et coiffage.</p>
       </div>
 
       <div class="card">
         <div class="service-header">
           <span class="service-name">Taille de Barbe</span>
-          <span class="service-price">15 €</span>
+          <span class="service-price">8 €</span>
         </div>
-        <p class="service-desc">Traçage précis au coupe-chou, serviette chaude et soin hydratant à l'huile.</p>
+        <p class="service-desc">Traçage précis au coupe-chou et soin hydratant.</p>
       </div>
 
       <div class="card">
         <div class="service-header">
-          <span class="service-name">Formule 35 Carats</span>
-          <span class="service-price">32 €</span>
+          <span class="service-name">Coupe + Barbe</span>
+          <span class="service-price">20 €</span>
         </div>
-        <p class="service-desc">Coupe homme complète + rituel barbe traditionnel avec serviette chaude.</p>
+        <p class="service-desc">Coupe homme complète combinée à l'entretien personnalisé de votre barbe.</p>
       </div>
 
       <div class="card">
         <div class="service-header">
-          <span class="service-name">Coupe Enfant (-12 ans)</span>
-          <span class="service-price">15 €</span>
+          <span class="service-name">Coupe Enfant</span>
+          <span class="service-price">12 €</span>
         </div>
-        <p class="service-desc">Coupe soignée adaptée aux plus jeunes avec coiffage.</p>
+        <p class="service-desc">Une coupe adaptée et tendance pour les plus jeunes.</p>
       </div>
 
       <div class="card">
         <div class="service-header">
-          <span class="service-name">Soin Visage Express</span>
-          <span class="service-price">18 €</span>
+          <span class="service-name">Soin Visage Vapeur</span>
+          <span class="service-price">25 €</span>
         </div>
-        <p class="service-desc">Nettoyage purifiant, vapeur douce et masque revitalisant.</p>
+        <p class="service-desc">Nettoyage profond, bain de vapeur et masque pour un coup d'éclat.</p>
       </div>
 
       <div class="card">
         <div class="service-header">
-          <span class="service-name">Contours &amp; Finitions</span>
-          <span class="service-price">10 €</span>
+          <span class="service-name">Coloration Cheveux</span>
+          <span class="service-price">25 €</span>
         </div>
-        <p class="service-desc">Rafraîchissement de la nuque, des tempes et des contours de barbe.</p>
+        <p class="service-desc">Application soignée pour raviver ou changer de nuance.</p>
       </div>
     </div>
   </section>
 
   <section class="container" id="contact">
-    <h2 class="section-title">Informations &amp; Horaires</h2>
+    <h2 class="section-title">Informations Pratiques</h2>
     <div class="section-line"></div>
 
     <div class="info-box">
       <div class="info-item">
         <h3>Adresse</h3>
-        <p>Centre-Ville<br />35500 Vitré, France</p>
+        <p><strong>Coiffeur 35 Carats</strong><br />51 Rue de Paris<br />35500 Vitré, France</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=51+Rue+de+Paris+35500+Vitre" target="_blank" class="map-link">Voir sur Google Maps &rarr;</a>
       </div>
 
       <div class="info-item">
-        <h3>Horaires d'ouverture</h3>
-        <p>Mardi – Samedi : 09h30 – 19h00<br />Dimanche &amp; Lundi : Fermé</p>
+        <h3>Horaires</h3>
+        <ul class="schedule-list">
+          <li><span>Lundi :</span> <span>09h00 – 19h00</span></li>
+          <li><span>Mardi :</span> <span>09h00 – 19h00</span></li>
+          <li><span>Mercredi :</span> <span>09h00 – 19h00</span></li>
+          <li><span>Jeudi :</span> <span>09h00 – 19h00</span></li>
+          <li><span>Vendredi :</span> <span>09h00 – 19h00</span></li>
+          <li><span>Samedi :</span> <span>09h00 – 19h00</span></li>
+          <li class="closed"><span>Dimanche :</span> <span>Fermé</span></li>
+        </ul>
       </div>
 
       <div class="info-item">
-        <h3>Contact &amp; Réservation</h3>
-        <p>Sans rendez-vous ou par téléphone<br />Tél : 02 99 00 00 00</p>
+        <h3>Contact</h3>
+        <p>Pour nous rendre visite ou prendre rdv :</p>
+        <p style="margin-top: 10px; font-weight: 600; color: var(--gold-light);">Tél : 07 51 04 38 27</p>
+        <p style="font-size: 0.85rem; margin-top: 5px;">(WhatsApp disponible)</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Coiffeur 35 Carats – Vitré. Tous droits réservés.</p>
+    <p>&copy; 2026 Coiffeur 35 Carats – 51 Rue de Paris, 35500 Vitré. Tous droits réservés.</p>
   </footer>
 
 </body>
