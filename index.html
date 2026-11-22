@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coiffeur 35 Carats | Barbier — Vitré</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Coiffeur 35 Carats | Barbier – Vitré</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-black: #080808;
@@ -29,35 +29,262 @@
       color: var(--text-white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      padding: 20px 15px;
+      overflow-x: hidden;
     }
 
-    .container {
-      width: 100%;
-      max-width: 480px;
-      background: linear-gradient(180deg, #0d0d0d 0%, #050505 100%);
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      border-radius: 24px;
-      padding: 35px 24px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
-    }
-
-    .brand-header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .logo-icon {
-      width: 95px;
-      height: 95px;
-      margin: 0 auto 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .brand-title {
+    h1, h2, h3, .brand {
       font-family: 'Cinzel', serif;
-      font-size: 1.85rem;
+      letter-spacing: 1.5px;
+    }
+
+    /* Header & Hero */
+    header {
+      background: linear-gradient(rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.95)),
+                  radial-gradient(circle at top, #221b08 0%, #080808 70%);
+      text-align: center;
+      padding: 70px 20px 60px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .badge {
+      display: inline-block;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-main);
+      padding: 6px 18px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-main), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--text-gray);
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin: 0 auto 30px;
+      font-weight: 300;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
+      color: #080808;
+      text-decoration: none;
+      padding: 14px 34px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+
+    /* Sections */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--gold-main);
+      margin-bottom: 10px;
+    }
+
+    .section-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold-main);
+      margin: 0 auto 40px;
+    }
+
+    /* Tarifs Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 25px;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--gold-main);
+    }
+
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .service-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-white);
+    }
+
+    .service-price {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--gold-light);
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+    }
+
+    /* Infos Pratiques */
+    .info-box {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 6px;
+      padding: 35px 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .info-item h3 {
+      color: var(--gold-main);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .info-item p {
+      color: var(--text-gray);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      color: var(--text-gray);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Salon Homme &amp; Barbier • Vitré</div>
+    <h1>COIFFEUR 35 CARATS</h1>
+    <p class="subtitle">L'excellence de la coiffure masculine et du rituel barbier traditionnel au cœur de Vitré.</p>
+    <a href="#contact" class="btn-gold">Prendre Rendez-vous</a>
+  </header>
+
+  <section class="container" id="tarifs">
+    <h2 class="section-title">Nos Prestations &amp; Tarifs</h2>
+    <div class="section-line"></div>
+
+    <div class="services-grid">
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Coupe Homme</span>
+          <span class="service-price">20 €</span>
+        </div>
+        <p class="service-desc">Diagnostic personnalisé, shampoing, coupe ciseaux ou tondeuse et coiffage.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Taille de Barbe</span>
+          <span class="service-price">15 €</span>
+        </div>
+        <p class="service-desc">Traçage précis au coupe-chou, serviette chaude et soin hydratant à l'huile.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Formule 35 Carats</span>
+          <span class="service-price">32 €</span>
+        </div>
+        <p class="service-desc">Coupe homme complète + rituel barbe traditionnel avec serviette chaude.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Coupe Enfant (-12 ans)</span>
+          <span class="service-price">15 €</span>
+        </div>
+        <p class="service-desc">Coupe soignée adaptée aux plus jeunes avec coiffage.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Soin Visage Express</span>
+          <span class="service-price">18 €</span>
+        </div>
+        <p class="service-desc">Nettoyage purifiant, vapeur douce et masque revitalisant.</p>
+      </div>
+
+      <div class="card">
+        <div class="service-header">
+          <span class="service-name">Contours &amp; Finitions</span>
+          <span class="service-price">10 €</span>
+        </div>
+        <p class="service-desc">Rafraîchissement de la nuque, des tempes et des contours de barbe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="contact">
+    <h2 class="section-title">Informations &amp; Horaires</h2>
+    <div class="section-line"></div>
+
+    <div class="info-box">
+      <div class="info-item">
+        <h3>Adresse</h3>
+        <p>Centre-Ville<br />35500 Vitré, France</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Horaires d'ouverture</h3>
+        <p>Mardi – Samedi : 09h30 – 19h00<br />Dimanche &amp; Lundi : Fermé</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Contact &amp; Réservation</h3>
+        <p>Sans rendez-vous ou par téléphone<br />Tél : 02 99 00 00 00</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Coiffeur 35 Carats – Vitré. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
