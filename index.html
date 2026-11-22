@@ -59,18 +59,18 @@
     }
 
     .logo-container {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .logo-svg {
-      width: 120px;
+    /* استيراد شعارك الفعلي كصورة بدقة عالية */
+    .logo-img {
+      max-width: 200px;
       height: auto;
-      fill: none;
-      stroke: var(--gold-main);
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+      filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.4));
+      border-radius: 8px;
     }
 
     h1 {
@@ -295,24 +295,9 @@
   <header>
     <div class="badge">Salon Homme &amp; Barbier • Vitré</div>
     
+    <!-- تم تبديل الرمز الهندسي بالصورة الأصلية لشعاركم الفخم -->
     <div class="logo-container">
-      <svg class="logo-svg" viewBox="0 0 100 120">
-        <!-- Diamond Shape -->
-        <polygon points="50,10 75,28 85,28 50,5 15,28 25,28" stroke="#d4af37" stroke-width="1.5" />
-        <polygon points="25,28 50,10 75,28 50,45" stroke="#d4af37" stroke-dasharray="1 0" />
-        <line x1="25" y1="28" x2="50" y2="45" stroke="#aa8220" />
-        <line x1="75" y1="28" x2="50" y2="45" stroke="#aa8220" />
-        <line x1="50" y1="10" x2="50" y2="45" stroke="#aa8220" />
-        
-        <!-- Scissors Shape -->
-        <line x1="30" y1="35" x2="50" y2="68" stroke="#d4af37" stroke-width="2" />
-        <line x1="70" y1="35" x2="50" y2="68" stroke="#d4af37" stroke-width="2" />
-        <circle cx="50" cy="68" r="3" fill="#aa8220" stroke="#f3d078" stroke-width="1" />
-        <path d="M50,68 L38,90" stroke="#d4af37" stroke-width="2" />
-        <path d="M50,68 L62,90" stroke="#d4af37" stroke-width="2" />
-        <circle cx="34" cy="98" r="8" stroke="#f3d078" stroke-width="2" />
-        <circle cx="66" cy="98" r="8" stroke="#f3d078" stroke-width="2" />
-      </svg>
+      <img class="logo-img" src="https://i.ibb.co/3yq0Qv3D/35-carats-logo.png" alt="COIFFEUR 35 CARATS Logo" />
     </div>
 
     <h1>COIFFEUR 35 CARATS</h1>
